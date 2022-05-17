@@ -26,24 +26,33 @@ public class Task_3_2_12 {
         int day = scan.nextInt();
         int month = scan.nextInt();
         int year = scan.nextInt();
-        if (year >= 1) {
-            if (day >= 1 && day <= 31) {
-                if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+        if (year >= 0) {
+
+            if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+                if (day >= 1 && day <= 31) {
                     System.out.println("true");
-                } else if (day <= 30) {
-                    if (month == 4 || month == 6 || month == 9 || month == 11) {
-                        System.out.println("true");
-                    } else if (day <= 29) {
-                        if (month == 2) {
-                            System.out.println("true");
-                        }
-                    } else {
-                        System.out.println("false");
-                    }
                 } else {
                     System.out.println("false");
                 }
+            } else if (month == 4 || month == 6 || month == 9 || month == 11) {
+                if (day >= 1 && day <= 30) {
+                    System.out.println("true");
+                } else {
+                    System.out.println("false");
+                }
+            } else if (month == 2) {
+                if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                    if (day == 29) {
+                        System.out.println("true");
+                    }
+                } else if (day <= 29) {
+                    System.out.println("true");
+                }
+            } else {
+                System.out.println("false");
             }
+        } else {
+            System.out.println("false");
         }
     }
 }
