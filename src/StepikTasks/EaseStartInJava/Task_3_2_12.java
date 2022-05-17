@@ -24,7 +24,7 @@ public class Task_3_2_12 {
         int day = scan.nextInt();
         int month = scan.nextInt();
         int year = scan.nextInt();
-        if (day >=1 && day <=31 && month >=1 && month <=1 && year >=1){
+        if (day >=1 && day <=31 && month >=1 && year >=1){
             System.out.println("true");
         }else{
             System.out.println("false");
