@@ -34,20 +34,16 @@ public class Task_2_5_16 {
     public static void clock() {
         Scanner scan = new Scanner(System.in);
         int sec = scan.nextInt(); //в одном часе 3600 секунд!
-        int hours = sec / 3600;
-        int mint = (sec % 3600) / 60;
-        sec = (sec % 3600) % 60;
-        String a = Integer.toString(hours);
-        String b = Integer.toString(mint);
-        String c = Integer.toString(sec);
-        if (hours >= 0 && hours <= 9) {
-            a = "0" + a;
-        } else if (mint >= 0 && mint <= 9) {
-            b = "0" + b;
-        } else if (sec >= 0 && sec <= 9) {
-            c = "0" + c;
+        if (sec == 86400) {
+            System.out.println("00:00:00");
+        } else {
+            int hours = sec / 3600;
+            int mint = (sec % 3600) / 60;
+            sec = (sec % 3600) % 60;
+            System.out.println((hours >= 0 && hours <= 9 ? ("0" + hours) : hours) +
+                    ":" + (mint >= 0 && mint <= 9 ? ("0" + mint) : mint) +
+                    ":" + (sec >= 0 && sec <= 9 ? ("0" + sec) : sec));
+            scan.close();
         }
-        System.out.println(a + ":" + b + ":" + c);
-        scan.close();
     }
 }
